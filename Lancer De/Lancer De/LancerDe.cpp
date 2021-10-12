@@ -68,6 +68,24 @@ void LancerDe::TireMultiDe()
 		//Lancer de 1 dé
 		ddhisto->jet();
 		ui.Erreur->setText("");
+
+		ui.tableWidget->setRowCount(nbrDeEncode);
+		ui.tableWidget->setColumnCount(1);
+
+		for (int i = 0; i < 1; i++)
+		{
+			ui.tableWidget->insertRow(i);
+			//Ajout de ligne de salope
+			for (int j = 0; j < 1; j++)
+			{
+				//int nbrDeEncode = ddhisto->tab[i].toInt();
+				//Convertir en QString
+				int pute = ddhisto->getValeurTabl(i);
+
+				ui.tableWidget->setItem(i, j, new QTableWidgetItem(QString::number(pute)));
+			}
+		}
+
 	} else if (nbrDeEncode > 7 || nbrDeEncode == 0 || nbrDeEncode == NULL)
 	{
 		//Ne fait rien
@@ -79,19 +97,19 @@ void LancerDe::TireMultiDe()
 		ui.Erreur->setText("");
 
 		ui.tableWidget->setRowCount(nbrDeEncode);
-		ui.tableWidget->setColumnCount(2);
+		ui.tableWidget->setColumnCount(1);
 
 		for (int i = 0; i < nbrDeEncode; i++)
 		{
-			ui.tableWidget->insertRow(i+1);
+			ui.tableWidget->insertRow(i);
 			//Ajout de ligne de salope
-			for (int j = 0; j < 2; j++)
+			for (int j = 0; j < 1; j++)
 			{
 				//int nbrDeEncode = ddhisto->tab[i].toInt();
 				//Convertir en QString
 				int pute = ddhisto->getValeurTabl(i);
 
-				ui.tableWidget->setItem(i, j, new QTableWidgetItem(pute));
+				ui.tableWidget->setItem(i, j, new QTableWidgetItem(QString::number(pute)));
 			}
 		}
 	}

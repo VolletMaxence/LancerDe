@@ -138,8 +138,14 @@ public:
         Erreur->setObjectName(QString::fromUtf8("Erreur"));
         Erreur->setGeometry(QRect(410, 530, 171, 21));
         tableWidget = new QTableWidget(tab_2);
+        if (tableWidget->columnCount() < 2)
+            tableWidget->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(685, 40, 291, 301));
+        tableWidget->setGeometry(QRect(815, 40, 161, 301));
         tabWidget->addTab(tab_2, QString());
         LancerDeClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(LancerDeClass);
@@ -189,6 +195,10 @@ public:
         ChoixNbrDe->setText(QCoreApplication::translate("LancerDeClass", "Choisir le nombre de d\303\251 a lancer", nullptr));
         plainTextEdit->setPlainText(QCoreApplication::translate("LancerDeClass", "Maximum de lancer simultann\303\251 : 7", nullptr));
         Erreur->setText(QString());
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("LancerDeClass", "Nombre Tir", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("LancerDeClass", "R\303\251sultat", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("LancerDeClass", "Historique D\303\251", nullptr));
     } // retranslateUi
 

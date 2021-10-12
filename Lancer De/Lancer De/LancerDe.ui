@@ -289,12 +289,22 @@
      <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>685</x>
+        <x>815</x>
         <y>40</y>
-        <width>291</width>
+        <width>161</width>
         <height>301</height>
        </rect>
       </property>
+      <column>
+       <property name="text">
+        <string>Nombre Tir</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Résultat</string>
+       </property>
+      </column>
      </widget>
     </widget>
    </widget>
