@@ -74,7 +74,7 @@ void LancerDe::TireMultiDe()
 
 		for (int i = 0; i < 1; i++)
 		{
-			ui.tableWidget->insertRow(i);
+			//ui.tableWidget->insertRow(i);
 			//Ajout de ligne de salope
 			for (int j = 0; j < 1; j++)
 			{
@@ -101,11 +101,10 @@ void LancerDe::TireMultiDe()
 
 		for (int i = 0; i < nbrDeEncode; i++)
 		{
-			ui.tableWidget->insertRow(i);
+			//ui.tableWidget->insertRow(i);
 			//Ajout de ligne de salope
 			for (int j = 0; j < 1; j++)
 			{
-				//int nbrDeEncode = ddhisto->tab[i].toInt();
 				//Convertir en QString
 				int pute = ddhisto->getValeurTabl(i);
 

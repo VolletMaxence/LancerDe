@@ -145,7 +145,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(815, 40, 161, 301));
+        tableWidget->setGeometry(QRect(815, 40, 121, 241));
         tabWidget->addTab(tab_2, QString());
         LancerDeClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(LancerDeClass);
