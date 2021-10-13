@@ -1,6 +1,7 @@
 #include "dd.h"
 #include <stdlib.h> //Pour ajouter le random
 #include <qDebug>
+#include <qRandomGenerator>
 
 dd::dd(int n)
 {
@@ -13,7 +14,6 @@ dd::dd()
 	//Mise a 0 score
 	this->Valeur = 0;
 	this->nbrTir = 0;
-	//Mise a 0 Score
 	
 	qDebug() << "Instanciation ";
 }
@@ -23,7 +23,7 @@ void dd::LancerDe()
 	qDebug() << "Lance Dé";
 	//Lancer du dé avec le constructeur
 	
-	this->Valeur = rand() % 6 + 1;
+	this->Valeur = QRandomGenerator::global()->bounded(1,7);
 	//On ajoute un tir
 	this->nbrTir = this->nbrTir++;
 	qDebug() << this->nbrTir;
