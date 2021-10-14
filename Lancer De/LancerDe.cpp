@@ -17,12 +17,13 @@ LancerDe::LancerDe(QWidget *parent)
 void LancerDe::TireDe()
 {
 	qDebug() << "Tire Dé";
-	de->LancerDe();
+	(*de)++;
 	//Affichage Score dé :
 	LancerDe::AfficheValeurDe();
 	//Affichage score total :
 	LancerDe::AfficheScoreTotal();
-
+	de->getValeur();
+	de->getScoreTotal();
 }
 
 void LancerDe::AfficheValeurDe()
@@ -47,10 +48,9 @@ void LancerDe::AfficheScoreTotal()
 	ui.ScoreTotal_2->setText(QScoreTotal);
 }
 
-
 void LancerDe::Remise0Score()
 {
-	de->Score0();
+	(*de)=0();
 }
 
 //---------------------------------------------------------
