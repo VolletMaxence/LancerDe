@@ -273,16 +273,6 @@
        <string>Maximum de lancer simultanné : 7</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView">
-      <property name="geometry">
-       <rect>
-        <x>705</x>
-        <y>40</y>
-        <width>281</width>
-        <height>441</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="Erreur">
       <property name="geometry">
        <rect>
@@ -295,6 +285,26 @@
       <property name="text">
        <string/>
       </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>815</x>
+        <y>40</y>
+        <width>121</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Nombre Tir</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Résultat</string>
+       </property>
+      </column>
      </widget>
     </widget>
    </widget>

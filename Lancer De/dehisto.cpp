@@ -11,6 +11,10 @@ void dehisto::jet()
 	this->LancerDe();
 	tab[0] = this->getValeur();
 	qDebug() << tab[0];
+
+	//tableView
+	//Afficher Valeur dans tableau
+
 }
 
 void dehisto::jet(int n)
@@ -19,8 +23,14 @@ void dehisto::jet(int n)
 	{
 		//Tir de dé
 		this->LancerDe();
+
 		//Afficher chaque tir dans tableau
 		tab[i] = this->getValeur();
 		qDebug() << tab[i];
 	}
+}
+
+int dehisto::getValeurTabl(int i)
+{
+	return this->tab[i];
 }
