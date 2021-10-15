@@ -31,8 +31,6 @@ int dd::LancerDe()
 	qDebug() << Valeur << " = Valeur";
 	qDebug() << this->Valeur << " = Valeur dans objet";
 	qDebug() << this->nbrTir << " = nbr Tir";
-	//On ajoute le score au score total :
-	this->ScoreTotal = this->Valeur + this->ScoreTotal;
 
 	return Valeur;
 }
@@ -93,27 +91,3 @@ dd & operator<(int n, dd & dd)
 
 	return dd;
 }
-
-/*
-void De::operator++(int)
-{
-	initializeRandom();
-	currentScore = rand() % 6 + 1;
-	totalScore += currentScore;
-}
-
-void operator+=(int &n, De &de)
-{
-	n = de.currentScore;
-}
-
-void De::operator=(int n)
-{
-	currentScore = n;
-}
-
-void operator<(int &n, De &de)
-{
-	n = de.totalScore;
-}
-*/
