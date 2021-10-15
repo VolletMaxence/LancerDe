@@ -32,7 +32,7 @@ void LancerDe::AfficheValeurDe()
 
 	//Convertion int en QString :
 	QString Qscore = QString::number(score);
-	qDebug() << score << " // " << Qscore;
+	qDebug() << score << " // " << Qscore<< " // " ;
 
 	ui.ChiffreObtenue_2->setText(Qscore);
 }

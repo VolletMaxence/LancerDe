@@ -26,11 +26,13 @@ int dd::LancerDe()
 	int Valeur = QRandomGenerator::global()->bounded(1,7);
 	//(*this) += Valeur;
 	//On ajoute un tir
+	this->Valeur = Valeur;
 	this->nbrTir = this->nbrTir++;
-	qDebug() << this->nbrTir;
+	qDebug() << Valeur << " = Valeur";
+	qDebug() << this->Valeur << " = Valeur dans objet";
+	qDebug() << this->nbrTir << " = nbr Tir";
 	//On ajoute le score au score total :
 	this->ScoreTotal = this->Valeur + this->ScoreTotal;
-
 
 	return Valeur;
 }
@@ -56,6 +58,8 @@ int dd::getScoreTotal()
 
 int dd::getValeur()
 {
+	qDebug() << this->Valeur << " : Valeur dans objet";
+
 	return this->Valeur;
 }
 
@@ -64,7 +68,7 @@ dd dd::operator++(int AAA)
 	int Valeur = LancerDe();
 
 	ScoreTotal += Valeur;
-
+	qDebug() << "Sale Pute";
 	return (*this);
 }
 
