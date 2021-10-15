@@ -108,6 +108,8 @@ void LancerDe::TireMultiDe()
 				//Convertir en QString
 				int pute = ddhisto->getValeurTabl(i);
 
+
+
 				ui.tableWidget->setItem(i, j, new QTableWidgetItem(QString::number(pute)));
 			}
 		}

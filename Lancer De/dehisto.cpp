@@ -22,7 +22,7 @@ void dehisto::jet(int n)
 	for (int i = 0; i < n; i++)
 	{
 		//Tir de dé
-		//this->operator++;
+		dd::operator++(n);
 
 		//Afficher chaque tir dans tableau
 		tab[i] = this->getValeur();

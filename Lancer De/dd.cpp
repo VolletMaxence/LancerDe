@@ -68,6 +68,7 @@ dd dd::operator++(int AAA)
 	int Valeur = LancerDe();
 
 	ScoreTotal += Valeur;
+	qDebug() << ScoreTotal;
 	qDebug() << "Sale Pute";
 	return (*this);
 }
