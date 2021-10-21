@@ -18,11 +18,7 @@ class dd
 
 		dd dd::operator++(int AAA);
 		dd dd::operator=(const dd& b);			//permet de remettre le score à 0
-		friend dd& operator+=(int n, dd &dd);	//permet de stocker dans n la valeur du dé
-		friend dd& operator<(int n, dd &dd);	//met le score total dans n
-
-		int getScoreTotal();
-		int getValeur();
-		
+		friend void operator+=(int &n, dd &dd);	//permet de stocker dans n la valeur du dé
+		friend void operator<(int &n, dd &dd);	//met le score total dans n
 };
 

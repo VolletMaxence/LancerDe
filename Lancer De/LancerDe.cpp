@@ -9,7 +9,6 @@ LancerDe::LancerDe(QWidget *parent)
     ui.setupUi(this);
 	dd de;
 	dehisto ddhisto;
-
 	Remise0Score();
 }
 
@@ -22,17 +21,21 @@ void LancerDe::TireDe()
 	LancerDe::AfficheValeurDe();
 	//Affichage score total :
 	LancerDe::AfficheScoreTotal();
-	de->getValeur();
-	de->getScoreTotal();
+	//de->getValeur();
+	this->n += (*de);
+	//de->getScoreTotal();
+	this->n < (*de);
 }
 
 void LancerDe::AfficheValeurDe()
 {
-	int score = de->getValeur();
+	//int score = de->getValeur();
+	//remplacer par +=
+	this->n += (*de);
 
 	//Convertion int en QString :
-	QString Qscore = QString::number(score);
-	qDebug() << score << " // " << Qscore<< " // " ;
+	QString Qscore = QString::number(this->n);
+	qDebug() << this->n << " // " << Qscore<< " // " ;
 
 	ui.ChiffreObtenue_2->setText(Qscore);
 }
@@ -40,10 +43,12 @@ void LancerDe::AfficheValeurDe()
 void LancerDe::AfficheScoreTotal()
 {
 	qDebug() << "ok";
-	int ScoreTotal = de->getScoreTotal();
+	//int ScoreTotal = de->getScoreTotal();
+	//Remplacer getScoreTotal par n<dd
+	this->n < (*de);
 
 	//Convertion int en QString :
-	QString QScoreTotal = QString::number(ScoreTotal);
+	QString QScoreTotal = QString::number(this->n);
 
 	ui.ScoreTotal_2->setText(QScoreTotal);
 }

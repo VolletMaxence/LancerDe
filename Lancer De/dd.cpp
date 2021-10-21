@@ -47,22 +47,9 @@ void dd::Score0()
 	this->nbrTir = 0;
 }
 
-
-
-int dd::getScoreTotal()
-{
-	return this->ScoreTotal;
-}
-
-int dd::getValeur()
-{
-	qDebug() << this->Valeur << " : Valeur dans objet";
-
-	return this->Valeur;
-}
-
 dd dd::operator++(int AAA)
 {
+	qDebug() << "Opérateur '+='";
 	int Valeur = LancerDe();
 
 	ScoreTotal += Valeur;
@@ -73,21 +60,22 @@ dd dd::operator++(int AAA)
 
 dd dd::operator=(const dd & b)
 {
+	qDebug() << "Opérateur '='";
 	Score0();
 	return *this;
 }
 
-dd & operator+=(int n, dd & dd)
+void operator+=(int &n, dd &dd)
 {
+	qDebug() << "Opérateur '+='";
 	n = dd.Valeur;
 
-	return dd;
 }
 
-dd & operator<(int n, dd & dd)
+void operator<(int &n, dd &dd)
 {
+	qDebug() << "Opérateur '<'";
 	// TODO: insérer une instruction return ici
 	n = dd.ScoreTotal;
 
-	return dd;
 }

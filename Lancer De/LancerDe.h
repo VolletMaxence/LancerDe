@@ -16,6 +16,7 @@ class LancerDe : public QMainWindow
 		Ui::LancerDeClass ui;
 		dd *de;
 		dehisto *ddhisto;
+		int n;
 
 	private slots:
 		//Partit Dé
