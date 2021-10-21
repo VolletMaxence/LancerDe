@@ -12,12 +12,11 @@ void dehisto::jet()
 
 	int n;
 	n += (*this);
-
-	qDebug() << tab[0];
+	tab[0] = n;
+	qDebug() << "tab[0] = " << tab[0];
 
 	//tableView
 	//Afficher Valeur dans tableau
-
 }
 
 //ca fonctionne lets go
@@ -33,11 +32,10 @@ void dehisto::jet(int n)
 		tab[i] = n;
 		qDebug() << tab[i];
 	}
-
-
 }
 
 int dehisto::getValeurTabl(int i)
 {
+	qDebug() << "affiche valeur de Tab[i]";
 	return this->tab[i];
 }

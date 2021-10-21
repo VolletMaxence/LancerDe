@@ -1,4 +1,4 @@
-#include "LancerDe.h"
+ï»¿#include "LancerDe.h"
 #include "dd.h"
 #include "dehisto.h"
 #include <qDebug>
@@ -12,22 +12,22 @@ LancerDe::LancerDe(QWidget *parent)
 	Remise0Score();
 }
 
-//Partit Dé
+//Partit DÃ©
 void LancerDe::TireDe()
 {
-	qDebug() << "Tire Dé";
+	qDebug() << "Tire DÃ©";
 	(*de)++;
-	//Affichage Score dé :
+	//Affichage Score dÃ© :
 	LancerDe::AfficheValeurDe();
 	//Affichage score total :
 	LancerDe::AfficheScoreTotal();
-	this->n += (*de);	//permet de stocker dans n la valeur du dé
+	this->n += (*de);	//permet de stocker dans n la valeur du dÃ©
 	this->n < (*de);	//met le score total dans n
 }
 
 void LancerDe::AfficheValeurDe()
 {
-	this->n += (*de); //permet de stocker dans n la valeur du dé
+	this->n += (*de); //permet de stocker dans n la valeur du dÃ©
 
 	//Convertion int en QString :
 	QString Qscore = QString::number(this->n);
@@ -55,7 +55,7 @@ void LancerDe::Remise0Score()
 }
 
 //---------------------------------------------------------
-//Partit Dé histo
+//Partit DÃ© histo
 void LancerDe::TireMultiDe()
 {
 	QString nbrDe = ui.nbrDe->text();
@@ -66,53 +66,40 @@ void LancerDe::TireMultiDe()
 
 	if(nbrDeEncode == 1)
 	{
-		//Lancer de 1 dé
+		//Lancer de 1 dÃ©
 		ddhisto->jet();
 		ui.Erreur->setText("");
-
-		ui.tableWidget->setRowCount(nbrDeEncode);
-		ui.tableWidget->setColumnCount(1);
-
-		for (int i = 0; i < 1; i++)
-		{
-			//ui.tableWidget->insertRow(i);
-			//Ajout de ligne de salope
-			for (int j = 0; j < 1; j++)
-			{
-				//int nbrDeEncode = ddhisto->tab[i].toInt();
-				//Convertir en QString
-				int pute = ddhisto->getValeurTabl(i);
-
-				ui.tableWidget->setItem(i, j, new QTableWidgetItem(QString::number(pute)));
-			}
-		}
-
-	} else if (nbrDeEncode > 7 || nbrDeEncode == 0 || nbrDeEncode == NULL)
+	} else if (nbrDeEncode > 7 || nbrDeEncode < 0 || nbrDeEncode == NULL)
 	{
 		//Ne fait rien
-		ui.Erreur->setText("Erreur, merci d'entré un nombre valide.");
-	}
-	else
+		ui.Erreur->setText("Erreur, merci d'entrÃ© un nombre valide.");
+	} else
 	{
 		ddhisto->jet(nbrDeEncode);
 		ui.Erreur->setText("");
+	}
+	//Affichage dans le tableau des valeur
+	ui.tableWidget->setRowCount(7);
+	ui.tableWidget->setColumnCount(1);
 
-		ui.tableWidget->setRowCount(nbrDeEncode);
-		ui.tableWidget->setColumnCount(1);
-
-		for (int i = 0; i < nbrDeEncode; i++)
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = 0; j < 1; j++)
 		{
-			//ui.tableWidget->insertRow(i);
-			//Ajout de ligne de salope
-			for (int j = 0; j < 1; j++)
+			//Convertir en QString
+			int pute = ddhisto->getValeurTabl(i);
+
+			if (pute > 6)
 			{
-				//Convertir en QString
-				int pute = ddhisto->getValeurTabl(i);
-
-
-
+				//Si les valeur ne sont supÃ©rieur a 6, c'est qu'il n'y a pas encore eu de tirage, ont remplace donc par //// pour indiquer qu'il n y a rien
+				ui.tableWidget->setItem(i, j, new QTableWidgetItem("////"));
+			}
+			else
+			{
+				//On affiche les valeur
 				ui.tableWidget->setItem(i, j, new QTableWidgetItem(QString::number(pute)));
 			}
 		}
 	}
+
 }
