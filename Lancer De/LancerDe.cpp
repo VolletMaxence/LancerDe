@@ -38,9 +38,6 @@ void LancerDe::AfficheValeurDe()
 
 void LancerDe::AfficheScoreTotal()
 {
-	qDebug() << "ok";
-	//int ScoreTotal = de->getScoreTotal();
-	//Remplacer getScoreTotal par n<dd
 	this->n < (*de);	//met le score total dans n
 
 	//Convertion int en QString :
@@ -52,9 +49,14 @@ void LancerDe::AfficheScoreTotal()
 void LancerDe::Remise0Score()
 {
 	(*de)=0();
+	//Afficher O en score total : 
+	this->n < (*de);	//met le score total dans n
+
+	LancerDe::AfficheScoreTotal();
 }
 
 //---------------------------------------------------------
+
 //Partit Dé histo
 void LancerDe::TireMultiDe()
 {
