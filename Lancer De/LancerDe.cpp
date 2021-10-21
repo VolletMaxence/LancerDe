@@ -21,17 +21,13 @@ void LancerDe::TireDe()
 	LancerDe::AfficheValeurDe();
 	//Affichage score total :
 	LancerDe::AfficheScoreTotal();
-	//de->getValeur();
-	this->n += (*de);
-	//de->getScoreTotal();
-	this->n < (*de);
+	this->n += (*de);	//permet de stocker dans n la valeur du dé
+	this->n < (*de);	//met le score total dans n
 }
 
 void LancerDe::AfficheValeurDe()
 {
-	//int score = de->getValeur();
-	//remplacer par +=
-	this->n += (*de);
+	this->n += (*de); //permet de stocker dans n la valeur du dé
 
 	//Convertion int en QString :
 	QString Qscore = QString::number(this->n);
@@ -45,7 +41,7 @@ void LancerDe::AfficheScoreTotal()
 	qDebug() << "ok";
 	//int ScoreTotal = de->getScoreTotal();
 	//Remplacer getScoreTotal par n<dd
-	this->n < (*de);
+	this->n < (*de);	//met le score total dans n
 
 	//Convertion int en QString :
 	QString QScoreTotal = QString::number(this->n);
@@ -94,7 +90,7 @@ void LancerDe::TireMultiDe()
 	} else if (nbrDeEncode > 7 || nbrDeEncode == 0 || nbrDeEncode == NULL)
 	{
 		//Ne fait rien
-		ui.Erreur->setText("Erreur");
+		ui.Erreur->setText("Erreur, merci d'entré un nombre valide.");
 	}
 	else
 	{

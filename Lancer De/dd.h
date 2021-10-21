@@ -21,4 +21,3 @@ class dd
 		friend void operator+=(int &n, dd &dd);	//permet de stocker dans n la valeur du dé
 		friend void operator<(int &n, dd &dd);	//met le score total dans n
 };
-

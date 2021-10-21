@@ -3,15 +3,15 @@
 
 dehisto::dehisto()
 {
-
+	&dd::operator=(0);
 }
 
 void dehisto::jet()
 {
-	//this->operator++;
-	//tab[0] = this->getValeur();
-	//this->n += (*de);
-	//dd::operator+=();
+	&dd::operator++;
+
+	int n;
+	n += (*this);
 
 	qDebug() << tab[0];
 
@@ -20,6 +20,7 @@ void dehisto::jet()
 
 }
 
+//ca fonctionne lets go
 void dehisto::jet(int n)
 {
 	for (int i = 0; i < n; i++)
@@ -27,10 +28,13 @@ void dehisto::jet(int n)
 		//Tir de dé
 		dd::operator++(n);
 
-		//Afficher chaque tir dans tableau
-		//tab[i] = this->getValeur();
+		int n;
+		n += (*this);
+		tab[i] = n;
 		qDebug() << tab[i];
 	}
+
+
 }
 
 int dehisto::getValeurTabl(int i)

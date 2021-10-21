@@ -49,7 +49,7 @@ void dd::Score0()
 
 dd dd::operator++(int AAA)
 {
-	qDebug() << "Opérateur '+='";
+	qDebug() << "Opérateur '++'";
 	int Valeur = LancerDe();
 
 	ScoreTotal += Valeur;
