@@ -3,6 +3,7 @@
 class dehisto :
 	public dd
 {
+private:
 	int tab[6];
 
 	public:
